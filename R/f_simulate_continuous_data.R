@@ -1,4 +1,3 @@
-
 #'
 #' @title
 #' Get Simulated Two Arm Means
@@ -17,44 +16,44 @@
 #' class with name 'SimulationResult'.
 #'
 #' @examples
-#' getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3,
-#'                         sd2 = 4, seed = 123)
+#' getSimulatedTwoArmMeans(
+#'   n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3,
+#'   sd2 = 4, seed = 123
+#' )
 #'
 #' @export
 #'
-getSimulatedTwoArmMeans <- function(
-        n1,
-        n2,
-        mean1,
-        mean2,
-        sd1,
-        sd2,
-        seed = NA_integer_) {
+getSimulatedTwoArmMeans <- function(n1,
+                                    n2,
+                                    mean1,
+                                    mean2,
+                                    sd1,
+                                    sd2,
+                                    seed = NA_integer_) {
+  # TODO use assertions to check all input arguments, see 'checkmate' package
 
-    # TODO use assertions to check all input arguments, see 'checkmate' package
+  # specify seed
+  if (!is.na(seed)) {
+    set.seed(seed)
+  }
 
-    # specify seed
-    if (!is.na(seed)) {
-        set.seed(seed)
-    }
+  # TODO create normal distributed random data for the two groups
 
-    # TODO create normal distributed random data for the two groups
+  # TODO save the fake data to a data frame in long format
+  tbl_res <- data.frame()
 
-    # TODO save the fake data to a data frame in long format
-    tbl_res <- data.frame()
+  # define that the result list is a class with name 'SimulationResult'
+  result <- structure(list(
+    data = tbl_res,
+    n1 = n1,
+    n2 = n2,
+    mean1 = mean1,
+    mean2 = mean2,
+    sd1 = sd1,
+    sd2 = sd2
+  ), class = "SimulationResult")
 
-    # define that the result list is a class with name 'SimulationResult'
-    result <- structure(list(
-      data = tbl_res,
-      n1 = n1,
-      n2 = n2,
-      mean1 = mean1,
-      mean2 = mean2,
-      sd1 = sd1,
-      sd2 = sd2
-    ), class = "SimulationResult")
-
-    return(result)
+  return(result)
 }
 
 #'
@@ -68,15 +67,17 @@ getSimulatedTwoArmMeans <- function(
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @examples
-#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7,
-#'                              sd1 = 3, sd2 = 4, seed = 123)
+#' x <- getSimulatedTwoArmMeans(
+#'   n1 = 50, n2 = 50, mean1 = 5, mean2 = 7,
+#'   sd1 = 3, sd2 = 4, seed = 123
+#' )
 #' print(x)
 #'
 #' @export
 #'
 print.SimulationResult <- function(x, ...) {
-    # TODO optimize the output format
-    print(class(x))
+  # TODO optimize the output format
+  print(class(x))
 }
 
 #'
@@ -99,21 +100,21 @@ print.SimulationResult <- function(x, ...) {
 #' A ggplot2 object.
 #'
 #' @examples
-#' x <- getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7,
-#'                              sd1 = 3, sd2 = 4, seed = 123)
+#' x <- getSimulatedTwoArmMeans(
+#'   n1 = 50, n2 = 50, mean1 = 5, mean2 = 7,
+#'   sd1 = 3, sd2 = 4, seed = 123
+#' )
 #' if (require(ggplot2)) plot(x)
 #'
 #' @importFrom rlang .data
 #'
 #' @export
 #'
-plot.SimulationResult <- function(
-        x,
-        ...,
-        main = "Continuous Fake Data",
-        xlab = "Group",
-        ylab = "Simulated Values") {
-
-    # TODO implement the plot function
+plot.SimulationResult <- function(x,
+                                  ...,
+                                  main = "Continuous Fake Data",
+                                  xlab = "Group",
+                                  ylab = "Simulated Values") {
+  # TODO implement the plot function
   stop("not implemented yet")
 }
