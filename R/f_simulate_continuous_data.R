@@ -54,6 +54,7 @@ getSimulatedTwoArmMeans <- function(
       sd2 = sd2
     ), class = "SimulationResult")
 
+    # return the results
     return(result)
 }
 
