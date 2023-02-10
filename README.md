@@ -96,7 +96,7 @@ start running in the pull request tab on GitHub.
 Hint: start with the file `R/f_simulate_continuous_data.R`
 
 Hint: after editing the documentation (roxygen comments) you need to run
-`devtools:document()` to update the actual `*.Rd` documentation! 
+`devtools::document()` to update the actual `*.Rd` documentation! 
 
 
 ## Bonus: automatically build and deploy documentation

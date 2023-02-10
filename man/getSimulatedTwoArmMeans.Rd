@@ -22,7 +22,9 @@ groups.
 TODO describe
 }
 \examples{
-getSimulatedTwoArmMeans(n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3,
-                        sd2 = 4, seed = 123)
+getSimulatedTwoArmMeans(
+  n1 = 50, n2 = 50, mean1 = 5, mean2 = 7, sd1 = 3,
+  sd2 = 4, seed = 123
+)
 
 }
