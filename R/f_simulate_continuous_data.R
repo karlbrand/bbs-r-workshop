@@ -8,6 +8,18 @@
 #'
 #' @param n1 a single integer value. The sample size of group 1.
 #' TODO document all arguments
+#' @param n2 a single integer value. The sample size of group 1.
+#' TODO document all arguments
+#' @param mean1 a single integer value. The sample size of group 1.
+#' TODO document all arguments
+#' @param mean2 a single integer value. The sample size of group 1.
+#' TODO document all arguments
+#' @param sd1 a single integer value. The sample size of group 1.
+#' TODO document all arguments
+#' @param sd2 a single integer value. The sample size of group 1.
+#' TODO document all arguments
+#' @param seed a single integer value. The sample size of group 1.
+#' TODO document all arguments
 #'
 #' @details
 #' TODO describe
@@ -53,7 +65,8 @@ getSimulatedTwoArmMeans <- function(n1,
     sd2 = sd2
   ), class = "SimulationResult")
 
-  return(result)
+    # return the results
+    return(result)
 }
 
 #'
